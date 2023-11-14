@@ -26,6 +26,7 @@ public class DateAfterValidator implements ConstraintValidator<DateAfter, Object
         Object referenceDate = new BeanWrapperImpl(o).getPropertyValue(referenceField);
         Object afterDate = new BeanWrapperImpl(o).getPropertyValue(afterField);
         logger.info("Date Check : Date {} should be after {}", afterDate, referenceDate);
-        return ((Date) afterDate).after((Date) referenceDate);
+        return (referenceDate != null && afterDate != null && ((Date) afterDate).after((Date) referenceDate));
+
     }
 }

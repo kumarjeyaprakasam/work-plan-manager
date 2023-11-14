@@ -1,0 +1,132 @@
+{
+	"info": {
+		"_postman_id": "81d10f54-c76f-492b-aead-c4fa951b40ec",
+		"name": "WorkPlanManager",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1713051",
+		"_collection_link": "https://restless-trinity-792736.postman.co/workspace/Hexaware-Solution~057b7434-c008-409f-a442-fc9c450b559b/collection/1713051-81d10f54-c76f-492b-aead-c4fa951b40ec?action=share&source=collection_link&creator=1713051"
+	},
+	"item": [
+		{
+			"name": "Get All Work Plan",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseurl}}/workplan",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"workplan"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateWorkplan",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"planName\": \"Test Plan Name {{$guid}}\",\r\n    \"planStart\": \"2023-11-01\",\r\n    \"planEnd\": \"2024-01-01\",\r\n    \"workPlanMilestonesBeans\": [\r\n        {\r\n            \"milestoneName\": \"MileStone 1 {{$guid}}\",\r\n            \"planStart\": \"2023-11-01\",\r\n            \"planEnd\": \"2024-01-01\",\r\n            \"tasksBeans\": [\r\n                {\r\n                    \"taskDetail\": \"Task Details {{$guid}}\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseurl}}/workplan",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"workplan"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateWorkplan-Rule1-NullCheck",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"planName\": \"Test Plan Name {{$guid}}\",\r\n    \"planStart\": \"2023-11-01\",\r\n    \"workPlanMilestonesBeans\": [\r\n        {\r\n            \"milestoneName\": \"MileStone 1 {{$guid}}\",\r\n            \"planStart\": \"2023-11-01\",\r\n            \"planEnd\": \"2024-01-01\",\r\n            \"tasksBeans\": [\r\n                {\r\n                    \"taskDetail\": \"Task Details {{$guid}}\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseurl}}/workplan",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"workplan"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateWorkplan-Rule1-DateCheck",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"planName\": \"Test Plan Name {{$guid}}\",\r\n    \"planStart\": \"2023-11-01\",\r\n    \"planEnd\": \"2023-1-01\",\r\n    \"workPlanMilestonesBeans\": [\r\n        {\r\n            \"milestoneName\": \"MileStone 1 {{$guid}}\",\r\n            \"planStart\": \"2023-11-01\",\r\n            \"planEnd\": \"2024-01-01\",\r\n            \"tasksBeans\": [\r\n                {\r\n                    \"taskDetail\": \"Task Details {{$guid}}\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseurl}}/workplan",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"workplan"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateWorkplan-Rule2-UniqueCheck",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"planName\": \"Test Plan Name 2b1ed144-5783-40eb-a7d3-0ec435d2c4ad\",\r\n    \"planStart\": \"2023-11-01\",  \r\n    \"planEnd\": \"2024-01-01\",  \r\n    \"workPlanMilestonesBeans\": [\r\n        {\r\n            \"milestoneName\": \"MileStone 1 {{$guid}}\",\r\n            \"planStart\": \"2023-11-01\",\r\n            \"planEnd\": \"2024-01-01\",\r\n            \"tasksBeans\": [\r\n                {\r\n                    \"taskDetail\": \"Task Details {{$guid}}\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseurl}}/workplan",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"workplan"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
