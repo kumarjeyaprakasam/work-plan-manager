@@ -1,6 +1,7 @@
 package com.convergent.workplanmaster.bean;
 
 import com.convergent.workplanmaster.entity.WorkPlanMasterEntity;
+import com.convergent.workplanmaster.validation.DateAfter;
 import com.convergent.workplanmaster.validation.UniqueName;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.validation.Valid;
@@ -18,6 +19,7 @@ import java.util.List;
 @Setter
 @ToString
 @UniqueName(entityName = WorkPlanMasterEntity.class, propertyName = "planName", message = "Work plan name should be unique")
+@DateAfter(referenceField="planStart", afterField = "planEnd", message = "Plan End should be after Plan Start Date")
 public class WorkPlanMasterBean {
     private Integer id;
     private Integer srId;
